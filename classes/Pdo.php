@@ -1,18 +1,28 @@
 <?php
-class Pdo {
+class Connection {
+    public $connection = null;
 
+    function connectDb($dbname,$dbPassword){
+        $this->connection = new PDO("mysql:host=localhost;dbname=$dbname","root","$dbPassword");
+      $this->connection ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    function getconnection($dbname,$dbPassword){
-        $pdo = new PDO("mysql:host=localhost;dbname=$dbname",'root',"$dbPassword");
-      $pdo ->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        return $this->connection;
+    }
 
-        return $pdo;
+    function  getConnection(){
+          return $this->connection;
+
     }
 }
 
 
 
-$pdo  =  new Pdo();
 
-//  specify your database name, and password as an argument
-$pdo->getconnection();
+
+
+
+
+$pdo  =  new Connection();
+
+
+$pdo->connectDb("portdb","");

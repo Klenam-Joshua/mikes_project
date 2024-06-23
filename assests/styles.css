@@ -1,0 +1,17 @@
+body {
+  height: 100dvh;
+  width: 100dvw;
+  --cui-body-bg: #f3f4f7;
+}
+
+.bg-danger-light {
+  background: red !important;
+}
+
+#body {
+  background: red !important;
+}
+
+.text-center {
+  text-align: center;
+}
