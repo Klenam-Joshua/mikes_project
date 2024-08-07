@@ -1,5 +1,7 @@
 <?php
-require "./classes/Pdo.php";
+// Inside /classes/Student.php
+require __DIR__ . "/Pdo.php";  // This will correctly reference Pdo.php in the same directory
+
 
 class Student {
     private $pdo;
@@ -30,12 +32,12 @@ class Student {
     }
 }
 
-// Instantiate Connection and create a PDO object
 $connection = new Connection();
 $pdo = $connection->connectDb("portdb", "");
 
 // Create a Student object with the $pdo object
 $student = new Student($pdo);
-$student->createStudent("Joshua", "Klenam", "male", "klenamj34@gmail.com", "0533423323");
 
-?>
+
+
+

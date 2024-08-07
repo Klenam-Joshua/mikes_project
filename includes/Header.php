@@ -5,7 +5,7 @@
 <div >
     <div class="dropdown">
         <div class="avatar dropdown-toggle"  role="button"  data-coreui-toggle="dropdown" aria-expanded="false">
-  <img class="avatar-img  " src="/assets/img/avatars/2.jpg" alt="user@email.com">
+  <img class="avatar-img  " src="../assests/images/9439678.jpg" alt="m">
 </div>
 
   <ul class="dropdown-menu">
