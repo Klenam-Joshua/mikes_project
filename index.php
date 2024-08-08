@@ -6,6 +6,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.1.0/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-OaSt6YlNk8f06OeGRPsV4UfP2F3Si8sd9Rqxt7iOdIsBKk+zbBLgwCyBwoBqLjDE" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.0.2/dist/css/coreui.min.css" rel="stylesheet" integrity="sha384-39e9UaGkm/+yp6spIsVfzcs3j7ac7G2cg0hzmDvtG11pT1d7YMnOC26w4wMPhzsL" crossorigin="anonymous">
     <link href="./assests/styles.css"/>
@@ -52,6 +53,7 @@ $sessionExist = true;
  }
 
     ?>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   </body>
 </html>

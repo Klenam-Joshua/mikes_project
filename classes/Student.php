@@ -25,11 +25,51 @@ class Student {
 
     }
 
+     function getStudentsCount(){
+         $stmt = $this->pdo->query("SELECT count(*) as count FROM students");
+         $counts = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+         return $counts["count"];
+
+     }
+      function getDepartmentsCount(){
+         $stmt = $this->pdo->query("SELECT count(*) as count FROM departments");
+         $counts = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+         return $counts["count"];
+
+     }
+
+     function getFacultiesCount(){
+         $stmt = $this->pdo->query("SELECT count(*) as count FROM faculty");
+         $counts = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+         return $counts["count"];
+
+     }
 
     function getStudent(){
            
 
     }
+
+   function getGenderGroup(){
+    $stmt = $this->pdo->query("SELECT gender, COUNT(*) as count FROM students GROUP BY gender");
+   $genderData =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+     $labels = [];
+$data = [];
+
+foreach ($genderData as $row) {
+    $labels[] = $row['gender'];
+    $data[] = $row['count'];
+}
+
+return $chartData = [
+    'labels' => $labels,
+    'data' => $data
+];
+}
+
 }
 
 $connection = new Connection();
