@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Redirect direct access to PHP files in the Pages directory to index.php
+RewriteCond %{REQUEST_URI} ^/mikes_project/Pages/ [NC]
+RewriteRule ^(.*)$ /mikes_project/index.php [L,R=302]
+
+# Ensure index.php handles all requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /mikes_project/index.php [L]
