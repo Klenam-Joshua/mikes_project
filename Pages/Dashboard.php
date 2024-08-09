@@ -30,9 +30,8 @@
               <div class="dropdown">
                 <button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <div class="dropdown-menu dropdown-menu-end">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#">Logout</a>
+                 
                 </div>
               </div>
             </div>
@@ -60,11 +59,11 @@
                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-options"></use>
                   </svg>
                 </button>
-                <div class="dropdown-menu dropdown-menu-end">
+                <!-- <div class="dropdown-menu dropdown-menu-end">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
                   <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
@@ -124,7 +123,7 @@
       </div>
     </section>
 
-    <div>
+    <div style="margin-top:3rem" >
       <canvas id="myChart"></canvas>
     </div>
 
@@ -132,11 +131,12 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       // Pass PHP data to JavaScript
-      const chartData = <?php echo json_encode($student->getGenderGroup()); 
+      const chartData = <?php echo($student->getGenderGroup()); 
        
-      
+        
       ?>;
 
+console.log(chartData, "result")
       const ctx = document.getElementById('myChart').getContext('2d');
       new Chart(ctx, {
         type: 'doughnut',

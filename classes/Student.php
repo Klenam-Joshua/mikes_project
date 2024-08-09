@@ -9,13 +9,15 @@ class Student {
     function __construct($pdo) {
         $this->pdo = $pdo;
     }
+
+    
     
     function createStudent($firstName, $lastName, $gender, $email, $phoneNumber) {
         $con = $this->pdo;
 
         // Prepare and execute the SQL statement to prevent SQL injection
-        $stmt = $con->prepare("INSERT INTO students (first_name, last_name, gender, email, phone_number) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$firstName, $lastName, $gender, $email, $phoneNumber]);
+        $stmt = $con->prepare("INSERT INTO students (first_name, last_name, gender, email, phone_number, department_Id) VALUES (?, ?, ?, ?, ?,?)");
+        $stmt->execute([$firstName, $lastName, $gender, $email, $phoneNumber, 1]);
     }
 
     // this function returns all students
@@ -59,16 +61,25 @@ class Student {
      $labels = [];
 $data = [];
 
+
+
 foreach ($genderData as $row) {
     $labels[] = $row['gender'];
     $data[] = $row['count'];
 }
 
-return $chartData = [
+
+
+
+return json_encode(
+    [
     'labels' => $labels,
     'data' => $data
-];
+]
+);
 }
+
+
 
 }
 

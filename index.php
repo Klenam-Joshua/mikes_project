@@ -44,6 +44,10 @@ $sessionExist = true;
       return require "./Pages/Students.php";
   case "/mikes_project/adminDashboard.php":
    return require "./Pages/Dashboard.php";
+  case  "/mikes_project/login":
+    return require "./Pages/Login.php";
+  case "/mikes_project/logout":
+    return require "./Pages/logout.php";
 
         default:
     return require "./Pages/Dashboard.php";

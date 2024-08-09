@@ -22,7 +22,7 @@ class Connection {
 
 
 
-$pdo  =  new Connection();
+// $pdo  =  new Connection();
 
 
-$pdo->connectDb("portdb","");
+// $pdo->connectDb("portdb","");

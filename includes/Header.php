@@ -1,5 +1,17 @@
+<?php 
+
+require "./classes/logout.php"
+
+?>
+
 <header class="d-flex  justify-content-between align-items-center px-3  bg-white"  style="height:4rem">
-       
+  <script>
+function logout() {
+  
+    window.location.href = 'logout.php';
+}   
+>
+</script>
 <div>
 </div>
 <div >
@@ -11,7 +23,9 @@
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" href="#">Mike</a></li>
     <li><a class="dropdown-item" href="#">Profile</a></li>
-    <li><a class="dropdown-item" href="#">Logout</a></li>
+    <li><a class="dropdown-item" href="/mikes_project/logout"  
+    
+    >Logout</a></li>
   </ul>
 </div>
 </div>
